@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+</head>
+<body>
+    <!-- # 2. 请编写一段逻辑判断任意一个字符串是否是回文（即正读和反读
+     都相同）。例子: "1234321" => true 例子: "123432111" => false -->
+    <script>
+        var str = prompt("请输入一串字符串");
+        var a='';
+        for(var i=str.length-1;i>=0;i--){
+            a+=str[i];
+        }
+        // console.log(a[2]);
+        // for(var j=0;j<a.length;j++){
+        //     if(a[j]!=str.slice(j,j+1)){
+        //         alert(str+"翻转后不是回文");
+        //         break;
+        //     }
+        // }
+        if(str==a){
+            alert(str+"翻转后为"+a+"是回文");
+        }
+        else{
+            alert(str+"翻转后为"+a+"不是回文");
+        }
+    </script>
+</body>
+</html>

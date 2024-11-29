@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+<body>
+    <!-- # 5. 请编写一段逻辑将任意数字数组中的偶数求和。
+     例子: [1,1,,1,4,6,1] => 10 -->
+    <script>
+        var str='';
+        var a=true;
+        var sum=0;
+        while(a){
+            var value = prompt("请输入一个整数(以0结束)");
+            var v=Number(value);
+            if(v==0){
+                a=false;
+                break;
+            }
+            str+=v+',';
+        };
+        // var arr=[5,2,5,6,6,2,6,2];
+        console.log(str);
+        var arr=str.split(",")
+        arr=arr.slice(0,arr.length-1)
+        console.log(arr);
+
+        // arr=['23','32','3','41','2']
+        for(var i=0;i<arr.length;i++){
+            if(arr[i]%2==0){
+                sum+=Number(arr[i]);
+            }
+        }
+        alert(str+"中偶数和为"+sum);
+    </script>
+</body>
+</html>

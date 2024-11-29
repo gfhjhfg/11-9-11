@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+<body>
+    <!-- # 1. 请编写一段逻辑将任意数字数组处理后返回一个新数组，
+    其中不包含任何重复的元素。例子: [1,2,3,4,2,1] => [1,2,3,4] -->
+    <script>
+        var arr1=[1,2,4,2,5,3,5,4,7,3,5];
+        var arr2=[];
+        for(var i=0 ;i<arr1.length;i++){
+            if(arr2.indexOf(arr1[i])==-1){
+                arr2.push(arr1[i]);
+            }
+        }
+        console.log(arr2);
+    </script>
+</body>
+</html>

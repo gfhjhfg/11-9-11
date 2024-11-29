@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10</title>
+    <style>
+        a {
+            display: block;
+            width: 80%;
+            height: 300px;
+            margin: 10px auto;
+            background-color: skyblue;
+            color: black;
+            text-decoration: none;
+            text-align: center;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <a href="./index.html">点击此区域回主页面</a>
+    <!-- # 10. 请编写一段逻辑将一个数组分组处理（将数组中的元素按
+     每 k 个一组进行分组，并返回二维数组。如果数组长度不能被 k 整除，
+     则最后一组可能包含少于 k 个元素）。
+    例子: [1,2,3,4] 、 2 => [[1,2],[3,4]] 例子: [1,2,3] 、 2 => [[1,2],[3]] -->
+    <script>
+        var arr = [1, 2, 3, 4,5,6,7];
+        var k = 5;
+        var result = [];
+        for (var i = 0; i < arr.length; i++) {
+            // 如果当前分组数组为空或者当前元素是k的倍数（除了第一个分组）
+            if (result.length === 0 || i % k === 0) {
+                // 创建一个新的子数组并添加到结果数组中
+                result.push([]);
+            }
+            result[result.length - 1].push(arr[i]);
+        }
+        console.log(result); // 输出: [[1, 2], [3, 4]]
+
+        // arr = [1, 2, 3];
+        // k = 2;
+        // result = [];
+        // // 遍历原始数组（与上面的代码相同）
+        // for (var i = 0; i < arr.length; i++) {
+        //     if (result.length === 0 || i % k === 0) {
+        //         result.push([]);
+        //     }
+        //     result[result.length - 1].push(arr[i]);
+        // }
+        // console.log(result); // 输出: [[1, 2], [3]]
+
+    </script>
+</body>
+</html>

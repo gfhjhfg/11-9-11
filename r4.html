@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4</title>
+</head>
+<body>
+    <!-- # 4. 请编写一段逻辑生成一个长度为 15 的斐波那契数列的
+     数组([1,1,2,3,5,8...])。 -->
+    <script>
+        var v=15;
+        var a=1,b=1,c=0,s=[];
+        for( var i=1;i<=v;i++){
+            if(i==1){
+                s=a;
+                // s=s.push(a);
+                
+                //  console.log(s);     
+            }
+            if(i==2){
+                s=a+","+b;
+
+                //  console.log(s);
+            }
+            if(i>2){
+                c=a;
+                a=b;
+                b=c+b;
+                // console.log(s);
+                // s=s+a+","+a+","+b;
+                s=s+','+b;
+            }
+        }
+        var arr=s.split(',');
+        console.log(v+'个斐波那契数列为：'+s);
+        console.log(arr);
+        
+    </script>
+</body>
+</html>

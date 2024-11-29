@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1</title>
+</head>
+<body>
+    <!-- # 1. 请编写一段逻辑将任意数字数组处理后返回一个新数组，
+    其中不包含任何重复的元素。例子: [1,2,3,4,2,1] => [1,2,3,4] -->
+    <script>
+        var arr = [1, 2, 3, 4, 2, 1,5,4,0];
+        // 创建一个空对象来跟踪已经遇到的元素
+        var seen = {};
+        // 创建一个空数组来存储不重复的元素
+        var a = [];
+        // 遍历原始数组
+        for (var i = 0; i < arr.length; i++) {
+            // 将当前元素转换为字符串形式，因为对象的键是字符串
+            var key = arr[i].toString();
+            // 检查这个键是否已经在seen对象中
+            if (!seen[key]) {
+                // 如果不在，将其添加到seen对象和uniqueArray数组中
+                seen[key] = true;
+                a.push(arr[i]);
+            }
+        }
+        console.log(a); // 输出: [1, 2, 3, 4]
+
+    </script>
+    {
+        // 原始数组
+var inputArray = [1, 2, 3, 4, 2, 1];
+
+// 将数组转换为字符串，每个元素之间用逗号分隔
+var arrayString = inputArray.join(",");
+
+// 创建一个空数组来存储结果
+var uniqueArray = [];
+
+// 将字符串分割回数组，但这次我们用一个循环来添加不重复的元素
+var elements = arrayString.split(",");
+for (var i = 0; i < elements.length; i++) {
+    // 由于split返回的是字符串数组，我们需要将元素转换回数字
+    var element = parseInt(elements[i], 10);
+    
+    // 在这里我们不能使用indexOf来检查是否已存在，因为那是高级函数
+    // 相反，我们可以使用另一个数组来模拟这个过程（虽然效率不高）
+    var isDuplicate = false;
+    for (var j = 0; j < uniqueArray.length; j++) {
+        if (uniqueArray[j] === element) {
+            isDuplicate = true;
+            break;
+        }
+    }
+    
+    // 如果不是重复项，则添加到结果数组中
+    if (!isDuplicate) {
+        uniqueArray.push(element);
+    }
+}
+
+// 注意：此时uniqueArray可能是乱序的，因为我们是通过字符串操作去除的重复项
+// 如果你需要保持原始顺序（且不考虑性能），则需要一个更复杂的方法
+
+// 但是，为了简化，我们可以对结果数组进行排序（尽管这改变了元素的顺序）
+uniqueArray.sort(function(a, b) {
+    return a - b;
+});
+
+// 打印结果
+console.log(uniqueArray); // 输出可能是: [1, 2, 3, 4]（但顺序可能因sort而改变，如果不排序则顺序不确定）
+    }
+</body>
+
+</html>

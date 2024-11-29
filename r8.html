@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8</title>
+    <style>
+        a {
+            display: block;
+            width: 80%;
+            height: 300px;
+            margin: 10px auto;
+            background-color: skyblue;
+            color: black;
+            text-decoration: none;
+            text-align: center;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <a href="./index.html">点击此区域回主页面</a>
+    <!-- # 8. 请编写一段逻辑编在一个数组检索一个目标值返回目标值在数组中的索引。
+     如果目标值不存在于数组中，则返回-1。（两种方法） 
+     例子: [1,2,3] 、 1 => 0 例子: [1,2,3] 、 4 => -1 -->
+    <script>
+        var arr=[2,3,6,8,4,5,1,9];
+        var target=0;
+        for(var i=0;i<arr.length;i++){
+            if(arr[i]==target){
+                console.log(i);
+                break;
+            }
+            if(i==arr.length-1){
+                console.log(-1);
+            }
+        }
+    </script>
+</body>
+</html>

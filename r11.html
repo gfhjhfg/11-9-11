@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11</title>
+    <style>
+        a {
+            display: block;
+            width: 80%;
+            height: 300px;
+            margin: 10px auto;
+            background-color: skyblue;
+            color: black;
+            text-decoration: none;
+            text-align: center;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <a href="./index.html">点击此区域回主页面</a>
+    <!-- # 11. 给定任意一个数字数组和目标值 target, 找出
+     数组两个元素之和等于 target 的下标数组 例子: [1,2,3,4] 、 2 => null 
+    例子: [1,2,3,4] 、 3 => [0, 1] -->
+     <script>
+        var arr=[1,2,3,4];
+        var target=6;
+        var is=false;
+        for(var i=0;i<arr.length;i++){
+            for(var j=i+1;j<arr.length;j++){
+                if(arr[i]+arr[j]==target){
+                    console.log(i+','+j);
+                    is=true;
+                    break;
+                }
+            }
+        }
+        if(is==false){
+            console.log(null);
+        }
+    </script>
+</body>
+</html>
